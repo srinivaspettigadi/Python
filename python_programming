@@ -1,0 +1,90 @@
+Python 3 Notebooks can be found here:
+
+GITHUB LINKS
+---------------
+https://github.com/Pierian-Data/Complete-Python-3-Bootcamp
+
+The older Python 2 Notebooks can be found here:
+https://github.com/jmportilla/Complete-Python-Bootcamp
+
+Installations docs
+-----------------------
+
+https://www.anaconda.com/products/individual  --> get the individual edition , which is free
+https://docs.anaconda.com/anaconda/install/linux/  --> Installation guide
+https://phoenixnap.com/kb/how-to-install-python-3-ubuntu  --> installation of python
+
+Installing python on Ubuntu
+-----------------------------
+sudo apt update
+sudo apt install software-properties-common
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt update
+sudo apt install python3.8
+sudo apt install python3-pip
+
+check --> python3 --version and 
+
+Sample HELLO WORLD from CLI
+------------------------------
+srinivas@srinivas-Inspiron-3521:~$ python3
+Python 3.8.5 (default, Jan 27 2021, 15:41:15) 
+[GCC 9.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+>>> if 3>1:
+...   print("comparing")
+...   print("comparing 3 qand 1")
+... 
+comparing
+comparing 3 qand 1
+>>> 
+>>> if 3>1:
+...    print("hello")
+... 
+hello
+>>> exit()
+----------------------------------------------------------------------------------
+
+Comments
+-----------
+single line can be commented using --> #
+For multi line comment you have to use
+
+---
+this is sample
+commented
+author
+---
+
+\n --> new line
+\b --> back space
+\t --> tab space
+\ --> escape symbol
+
+Examples
+-----------
+ype "help", "copyright", "credits" or "license" for more information.
+>>> print ("hello \n hi")
+hello 
+ hi
+>>> print ("hello \bhi")
+hellohi
+>>> print('hello \ 's srinivas')
+  File "<stdin>", line 1
+    print('hello \ 's srinivas')
+                    ^
+SyntaxError: invalid syntax
+>>> print('hello \'s srinivas')
+hello 's srinivas
+>>> print('hello\'s srinivas')
+hello's srinivas
+>>> print("hello "\srinivas\"  hi")
+  File "<stdin>", line 1
+    print("hello "\srinivas\"  hi")
+                                  ^
+SyntaxError: unexpected character after line continuation character
+>>> print("hello \"srinivas\"  hi")
+hello "srinivas"  hi
+=====================================================
+
