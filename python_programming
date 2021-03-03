@@ -33,7 +33,7 @@ Python 3.8.5 (default, Jan 27 2021, 15:41:15)
 Type "help", "copyright", "credits" or "license" for more information.
 >>> 
 >>> if 3>1:
-...   print("comparing")
+...  print("comparing")
 ...   print("comparing 3 qand 1")
 ... 
 comparing
@@ -87,4 +87,498 @@ SyntaxError: unexpected character after line continuation character
 >>> print("hello \"srinivas\"  hi")
 hello "srinivas"  hi
 =====================================================
+
+Topic 1
+----------
+Variables and print with variables
+===================================
+
+A variable is nothing but a reserved memory location to store values.
+
+Q) How to declare and use variable ??
+    No need to declare variable in python , python is also called dynamic typed language.
+
+Python variables can be as below only _
+------------------------------------------
+1.letters , numbers and underscores 
+2.Cant contain spaces
+3.Cant be a keyword  
+4.It must not start with numbers 
+5.Case Sensitive
+
+>> x=10
+>>> print(x)
+10
+>>> y="srinivas"
+>>> print(y)
+srinivas
+>>> print(type(y))
+<class 'str'>
+>>> a=100
+>>> print(type(a))
+<class 'int'>
+>>> del a       --------------------> we have del the         -----------------
+>>> print(a)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'a' is not defined
+
+Variable Data types
+========================
+Every Value in python has a data type
+Since everything is an object in python programming , data types are actually classes and variables are instance(object) of these classes.
+
+Basic data types
+-----------------
+Numbers (int, float, complex)
+Boolean
+Strings
+
+>> x=10
+>>> print(id(x))   --------> memory allocated for x
+9785184
+>>> print(type(x))   -------> type of variable x
+<class 'int'>
+
+>>> my_val=True             ----------------> only True(capital T) , False(Capital F) are the boolean data types
+>>> my_newval=False
+>>> print(my_val,type(my_val))
+True <class 'bool'>
+>>> print(my_val,type(my_val));print(my_newval,type(my_newval))
+True <class 'bool'> -----------------> boolean
+False <class 'bool'>  ---------------> booelan
+
+TypeCasting
+============
+>>> x=10
+>>> y=str(x) --------> converting Integer varaible to String
+>>> print(type(x))
+<class 'int'>
+>>> print(y,type(y))
+10 <class 'str'>
+>>> z=10.5
+>>> a=bool(z)  ----------------> converting z float to boolean variable
+>>> print(type(a))
+<class 'bool'>
+>>> 
+
+NOTE: -- any data type can be converted to boolean
+          bool(any_data_type)= True or False
+          bool(empty)=False ------> bool(0), bool(None), bool([]), bool(()) , bool({})
+          bool(non_empty)=True
+          
+          Any data type can be converted into String but reverse is not always true.
+          
+          
+ Change the order in print statement
+ 
+ >>> x=3;y=3.3 ; z="python"
+>>> print("{} {} {}".format(y,x,z))       -----------> format decides the order which u can give here
+3.3 3 python
+>>> print("{} \n{} \n{}".format(y,x,z))
+3.3 
+3 
+python
+
+New Feature "f" in version 3
+-----------------------------------
+
+>>> print(f"x value is {x} y value is {y} z value is{z}")
+x value is 3 y value is 3.3 z value ispython
+>>> print(f"x value is {x} y value is {y} z value is {z}") -------------> u can print using f in python 3
+x value is 3 y value is 3.3 z value is python
+>>> print(f"x value is {x} \ny value is {y} \nz value is {z}")
+x value is 3 
+y value is 3.3 
+z value is python
+>>> my_req_output=f"x value is {x} \ny value is {y} \nz value is {z}"  ------------> u can assign to ur variable also
+>>> print(my_req_output)
+x value is 3 
+y value is 3.3 
+z value is python
+
+INPUT AND OUTPUT SYNTAX
+===========================
+>>> a=10
+>>> b=20
+>>> res=a+b
+>>> print(f"addition of {a} and addition of {b} is {res}")
+addition of 10 and addition of 20 is 30
+>>> print(f"sum of {a} and  {b} is {res}")
+sum of 10 and  20 is 30
+
+Type converstion can be done using int and eval
+-------------------------------------------------
+
+x=int(input("enter x val: "))
+y=int(input("enter y val: "))
+res=x+y
+print(res)
+
+Example 2
+--------------
+root@srinivas-Inspiron-3521:/home/srinivas/python# cat input_add.py 
+"""    ---------> commenting multiple lines
+x=int(input("enter x val: "))
+y=int(input("enter y val: "))
+res=x+y
+print(res)
+"""   ---------------> comment closed for multiple lines
+x=eval(input("x"))
+y=eval(input("y"))
+res=x*y
+print(res)
+          
+Here, we can convert the data type using both the eval and int(input) 
+
+NOTE:-- Whenener u give eval for string --> you have to give the input string inside ""
+
+SLICING of STRINGS
+---------------------
+>> my_string="srinivas"
+>>> print(my_string[0])
+s
+>>> print(my_string[-1])
+s
+>>> print(my_string[-2])
+a
+ >>> print(my_string[-1:])
+s
+>>> print(my_string[:-6])
+sr
+>>> print(my_string[0:4])
+srin
+>>> print(my_string[0:])
+srinivas
+
+
+Deleting a String
+--------------------
+Strings are immutable, This means the string cannot be changed once it is assigned. You can delete the entire string
+
+Length of String
+-------------------
+>> my_name="pettigadi"
+>>> print(f"length is : {len(my_name)}")
+length is : 9
+
+>>> my_name="pettigadi"
+>>> print(f"length is : {len(my_name)}")
+length is : 9
+>>> print(my_name[-6: -3])
+tig
+
+FINDING THE FUNCTIONS FOR THE DATA TYPE
+=========================================
+x="srinivas"
+print(dir(x))
+
+y=100
+print(dir(y))
+
+Examples
+---------
+>> x="hi"
+>>> print(dir(x))
+['__add__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__',
+'__getattribute__', '__getitem__', '__getnewargs__', '__gt__', '__hash__', '__init__', '__init_subclass__', 
+'__iter__', '__le__', '__len__', '__lt__', '__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', 
+'__repr__', '__rmod__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'capitalize', 'casefold', 
+'center', 'count', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'format_map', 'index', 'isalnum', 'isalpha', 'isascii', 
+'isdecimal', 'isdigit', 'isidentifier', 'islower', 'isnumeric', 'isprintable', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 
+'lower', 'lstrip', 'maketrans', 'partition', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split',
+'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
+>>> y=100
+>>> print(dir(y))
+['__abs__', '__add__', '__and__', '__bool__', '__ceil__', '__class__', '__delattr__', '__dir__', '__divmod__', '__doc__', '__eq__', '__float__',
+'__floor__', '__floordiv__', '__format__', '__ge__', '__getattribute__', '__getnewargs__', '__gt__', '__hash__', '__index__', '__init__', '__init_subclass__', 
+'__int__', '__invert__', '__le__', '__lshift__', '__lt__', '__mod__', '__mul__', '__ne__', '__neg__', '__new__', '__or__', '__pos__', '__pow__', '__radd__', 
+'__rand__', '__rdivmod__', '__reduce__', '__reduce_ex__', '__repr__', '__rfloordiv__', '__rlshift__', '__rmod__', '__rmul__', '__ror__', '__round__',
+'__rpow__', '__rrshift__', '__rshift__', '__rsub__', '__rtruediv__', '__rxor__', '__setattr__', '__sizeof__', '__str__', '__sub__', '__subclasshook__',
+'__truediv__', '__trunc__', '__xor__', 'as_integer_ratio', 'bit_length', 'conjugate', 'denominator', 'from_bytes', 'imag', 'numerator', 'real', 'to_bytes']
+>>> a="srinivas"
+>>> print(a.upper())
+SRINIVAS
+>>> print(a.lower())
+srinivas
+>>> print(a.title())
+Srinivas
+>>> print(a.swapcase())
+SRINIVAS
+>>> print(a.strip())
+srinivas
+
+BOOLEAN RESULT OPERATIONS
+---------------------------
+>>> print(x)
+hi
+>>> print(x.startswith('o'))
+False
+>>> print(x.startswith('h'))
+True
+>> print(x.isspace())
+False
+
+JOIN , CENTER, ZFILL STRING OPERATIONS
+----------------------------------------
+JOIN
+=====
+>> a="srinivas"
+>>> print("#".join(a))
+s#r#i#n#i#v#a#s
+>>> print('-'.join(a))
+s-r-i-n-i-v-a-s
+>>> print('.'.join(a))
+s.r.i.n.i.v.a.s
+>>> print('\n'.join(a))
+s
+r
+i
+n
+i
+v
+a
+s
+>>> print('\t'.join(a))
+s	r	i	n	i	v	a	s
+
+CENTER
+=======
+>>> print(x.center(10))
+ srinivas 
+>>> print(x.center(30))
+           srinivas           
+>>> print(f"{x.center(30)}\n{y.center(30)}\n{z.center(30)})
+  File "<stdin>", line 1
+    print(f"{x.center(30)}\n{y.center(30)}\n{z.center(30)})  -------------> here " at the ending is missing
+                                                          ^
+SyntaxError: EOL while scanning string literal
+>>> print(f"{x.center(30)}\n{y.center(30)}\n{z.center(30)}")
+           srinivas           
+      srinivas Pettigadi      
+srinivas is a software engineer
+
+ZEROFILL
+=========
+>>> x='srinivas pettigadi'
+>>> print(x.zfill(10))
+srinivas pettigadi
+>>> print(x.zfill(30))
+000000000000srinivas pettigadi
+
+ZFILL is filling the remiaing with zeros like --> if we give 30 as zfill, the len of string - 30 = the number of zeros appended before
+ 
+
+SPLIT, STRIP
+=============
+STRIP will remove the spaces at the end or at the starting and we can remove charecters also but only at the end or starting side 
+
+Here, we have used lsrtrip, rstrip, strip
+
+>> x="srinivas  "
+>>> print(x.strip())
+srinivas
+>>> print(x.strip(s))
+>>> print(x.strip('s'))
+rinivas  
+>>> print(x.lstrip('s'))
+rinivas   
+>>> print(x.lstrip('s'))
+rinivas  
+>>> print(x.rstrip('s'))
+srinivas  
+>>> x='srinivas is'
+>>> print(x.rstrip('is'))
+srinivas 
+>>> y='srinivas./i'
+>>> print(y.rstrip('./i'))
+srinivas
+
+SPLIT
+---------
+>> a="srinivas is good"
+>>> print(a.split())
+['srinivas', 'is', 'good']
+
+
+COUNT, INDEX , FIND
+=====================
+COUNT
+------
+>>> x='srinivas is sweet and is'
+>>> x.count('s')
+5
+>>> x.count('sweet')
+1
+>>> x.count('and')
+1
+>>> x.count('e')
+2
+
+INDEX
+-------
+>>> x.index('srinivas')
+0
+>>> x.index('s')
+0
+>>> x.index('s',1)
+7
+>>> x.index('s',7)
+7
+>>> x.index('is')
+9
+>>> x.index('is',9)
+
+FIND
+------
+>>> x="srini is sri and sri iss srinivas"
+>>> x.find('sri')
+0
+>>> x.find('sri',0)
+0
+>>> x.find('s',0)
+0
+>>> print(x)
+srini is sri and sri iss srinivas
+>>> x.find('s')
+0
+>>> x.find('s',0)
+0
+>>> x.find('iss')
+21
+>>> java_version="java version 1.6"
+>>> java_version.find('java')   -------------> by using find we can accurate results compared to index
+0  
+>>> java_version.find('java')
+
+TASK
+---------------
+Print a string in left , center and right
+
+root@srinivas-Inspiron-3521:/home/srinivas/python# cat print_string 
+name=input("enter string to display at center, right and left")
+print(name.center(100))
+print(name.ljust(100))
+print(name.rjust(100))
+
+
+root@srinivas-Inspiron-3521:/home/srinivas/python# p print_string 
+enter string to display at center, right and left srinivas
+                                              srinivas                                              
+ srinivas                                                                                           
+                                                                                            srinivas
+root@srinivas-Inspiron-3521:/home/srinivas/python# 
+
+CHECK 22 vdieo ending for import os command
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
