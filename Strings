@@ -1,0 +1,23 @@
+print('learning python')
+print("data in double quotes")
+print('this is a new era of "learning" ')
+print("data science 'enhances' life")
+greeting = 'Hello'
+name = input('enter the name')
+print(greeting + '  ' + name)
+
+print(greeting + name)
+
+
+output
+............
+learning python
+data in double quotes
+this is a new era of "learning" 
+data science 'enhances' life
+enter the name srinivas
+Hello   srinivas
+Hello srinivas
+
+Process finished with exit code 0
+
